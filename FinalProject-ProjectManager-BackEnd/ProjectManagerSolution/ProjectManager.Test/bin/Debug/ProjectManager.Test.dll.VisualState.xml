@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1016]C:\293656_Joby_FinalCertification\src\293656-FinalProject-ProjectManager-BackEnd\ProjectManager.Test\bin\Debug\ProjectManager.Test.dll</TopNode>
+  <SelectedNode>[0-1017]ProjectManager</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1016]C:\293656_Joby_FinalCertification\src\293656-FinalProject-ProjectManager-BackEnd\ProjectManager.Test\bin\Debug\ProjectManager.Test.dll" Expanded="true" />
+    <Node UniqueName="[0-1017]ProjectManager" Expanded="true" />
+    <Node UniqueName="[0-1018]ProjectManager.Test" Expanded="true" />
+    <Node UniqueName="[0-1000]ProjectManager.Test.ProjectServiceTest" Expanded="true" />
+    <Node UniqueName="[0-1005]ProjectManager.Test.TaskServiceTest" Expanded="true" />
+    <Node UniqueName="[0-1011]ProjectManager.Test.UserServiceTest" Expanded="true" />
+  </Nodes>
+</VisualState>

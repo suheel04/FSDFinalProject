@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\293656_Joby_FinalCertification\src\293656-FinalProject-ProjectManager-BackEnd\ProjectManager.Test\bin\Debug\ProjectManager.Test.dll" total="13" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2019-04-05" time="08:51:19">
+  <environment nunit-version="2.6.1.12217" clr-version="2.0.50727.8937" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.1\bin" machine-name="DOTNET" user="Admin" user-domain="DOTNET" />
+  <culture-info current-culture="en-IN" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\293656_Joby_FinalCertification\src\293656-FinalProject-ProjectManager-BackEnd\ProjectManager.Test\bin\Debug\ProjectManager.Test.dll" executed="True" result="Success" success="True" time="0.103" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="ProjectManager" executed="True" result="Success" success="True" time="0.102" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Test" executed="True" result="Success" success="True" time="0.102" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="ProjectServiceTest" executed="True" result="Success" success="True" time="0.022" asserts="0">
+                <results>
+                  <test-case name="ProjectManager.Test.ProjectServiceTest.AddProject" executed="True" result="Success" success="True" time="0.005" asserts="0" />
+                  <test-case name="ProjectManager.Test.ProjectServiceTest.GetAllProject" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="ProjectManager.Test.ProjectServiceTest.GetProject" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="ProjectManager.Test.ProjectServiceTest.UpdateProject" executed="True" result="Success" success="True" time="0.004" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="TaskServiceTest" executed="True" result="Success" success="True" time="0.037" asserts="0">
+                <results>
+                  <test-case name="ProjectManager.Test.TaskServiceTest.AddTask" executed="True" result="Success" success="True" time="0.007" asserts="0" />
+                  <test-case name="ProjectManager.Test.TaskServiceTest.EndTask" executed="True" result="Success" success="True" time="0.011" asserts="0" />
+                  <test-case name="ProjectManager.Test.TaskServiceTest.GetAllTask" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="ProjectManager.Test.TaskServiceTest.GetTask" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="ProjectManager.Test.TaskServiceTest.UpdateTask" executed="True" result="Success" success="True" time="0.005" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="UserServiceTest" executed="True" result="Success" success="True" time="0.036" asserts="0">
+                <results>
+                  <test-case name="ProjectManager.Test.UserServiceTest.AddUser" executed="True" result="Success" success="True" time="0.019" asserts="0" />
+                  <test-case name="ProjectManager.Test.UserServiceTest.GetAllUser" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="ProjectManager.Test.UserServiceTest.GetUser" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="ProjectManager.Test.UserServiceTest.UpdateUser" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
