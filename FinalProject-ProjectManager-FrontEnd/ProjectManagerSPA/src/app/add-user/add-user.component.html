@@ -1,0 +1,117 @@
+<form class="user-form" #AddUserForm='ngForm' name='form' (ngSubmit) = "onClickSubmit(AddUserForm)">
+  <div class="form-group row" [class.invalid]="FirstNameControl.invalid">
+    <label for="FirstName" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-4">
+      <input  class="form-control" id="FirstName" required name="FirstName"  [(ngModel)]="userToAdd.FirstName"
+              #FirstNameControl="ngModel">
+      <span class="help-block" *ngIf="FirstNameControl.invalid && (FirstNameControl.dirty || FirstNameControl.touched)">
+        First Name is required
+      </span>
+    </div>
+  </div> 
+  <div class="form-group row" [class.invalid]="LastNameControl.invalid">
+      <label for="LastName" class="col-sm-2 col-form-label">Last Name</label>
+      <div class="col-sm-4">
+        <input  class="form-control" id="LastName" required name="LastName"  [(ngModel)]="userToAdd.LastName"
+                #LastNameControl="ngModel">
+        <span class="help-block" *ngIf="LastNameControl.invalid && (LastNameControl.dirty || LastNameControl.touched)">
+          Last Name is required
+        </span>
+      </div>
+    </div> 
+    <div class="form-group row" [class.invalid]="EmployeeIDControl.invalid">
+        <label for="EmployeeID" class="col-sm-2 col-form-label">Employee ID</label>
+        <div class="col-sm-4">
+          <input  class="form-control" id="EmployeeID" required name="EmployeeID"  [(ngModel)]="userToAdd.EmployeeID"
+                  #EmployeeIDControl="ngModel">
+          <span class="help-block" *ngIf="EmployeeIDControl.invalid && (EmployeeIDControl.dirty || EmployeeIDControl.touched)">
+            Employee ID is required
+          </span>
+        </div>
+      </div> 
+
+    <div class="form-group row"> 
+      <div class="col-sm-2">
+        <span></span>
+      </div >           
+        <div class="col-md-1">
+            <button class="btn btn-primary" type="submit" [disabled] ="AddUserForm.invalid">
+                <div *ngIf="userToAdd.UserID == 0; else elseBlock">Add</div>
+                <ng-template #elseBlock>Update</ng-template>
+            </button>
+        </div>
+        <div class="col-md-1">
+            <a class="btn btn-primary" (click)='Reset(AddUserForm)'>Reset</a>
+        </div>
+    </div>
+</form>
+
+<div class='card'>
+    <div class='card-header' style="font-weight: bold">
+     Users List
+    </div>
+    <div class='card-body'>
+      <fieldset class="the-fieldset" style="align-content: center">
+        <legend class="the-legend">Search Users</legend>
+        <div class='row p-2'>          
+          <div class='col-md-4'>
+            <input type='text'
+                  [(ngModel)]='userFilter' />
+          </div>          
+          <div class='col-md-2'>
+              Sort users by:
+          </div>
+          <div class='col-md-2'>
+              <a  (click)='onSort(1)' class="btn btn-info btn-sm">
+                  First Name
+                </a>
+          </div>
+          <div class='col-md-2'>
+              <a  (click)='onSort(2)' class="btn btn-info btn-sm">
+                  Last Name
+                </a>
+          </div>
+          <div class='col-md-2'>
+              <a  (click)='onSort(3)' class="btn btn-info btn-sm">
+                  Employee ID
+                </a>
+          </div>
+        </div>
+      </fieldset>
+      <div class="p-2"></div>      
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf='users && users.length'>
+          <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Employee ID</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let user of filterdUser'>    
+              <td>{{ user.FirstName }}</td> 
+              <td>{{ user.LastName }}</td>          
+              <td>{{ user.EmployeeID }}</td>      
+              <td>
+                <a  (click)='Edit(user)' class="btn btn-primary btn-sm">Edit
+                  </a>
+              </td>
+              <td>
+                <a  (click)='Delete(user)' class="btn btn-primary btn-sm">
+                    Delete
+                  </a>
+                </td>               
+            </tr>
+          </tbody>
+        </table>
+      </div>     
+    </div>
+  </div>
+  <div *ngIf='errorMessage'
+       class='alert alert-danger'>
+    Error: {{ errorMessage }}
+  </div>

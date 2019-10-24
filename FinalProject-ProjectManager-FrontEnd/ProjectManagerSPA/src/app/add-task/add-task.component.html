@@ -1,0 +1,84 @@
+<form class="task-form" #AddTaskForm='ngForm' (ngSubmit) = "onClickSubmit()">
+    <div class="form-group row">
+        <label for="Project" class="col-sm-2 col-form-label">Project</label>
+        <div class="col-sm-4">
+          <select id="Project" required #ProjectManagerControl="ngModel" 
+          [ngClass]="{ 'is-invalid': ProjectManagerControl.touched && ProjectManagerControl.invalid }"  class="form-control" name="Project" [(ngModel)]="taskToEdit.ProjectID" >             
+              <option [value]="task.ProjectID"  *ngFor="let task of ProjectList">{{ task.ProjectName }}</option>
+          </select>
+          <div *ngIf="ProjectManagerControl.touched && ProjectManagerControl.invalid" class="invalid-text">
+              <div *ngIf="ProjectManagerControl.errors.required">Manager is required</div>
+            </div>               
+        </div>
+      </div>
+    
+    <div class="form-group row" [class.invalid]="TaskNameControl.invalid">
+      <label for="TaskName" class="col-sm-2 col-form-label">Task Name</label>
+      <div class="col-sm-4">
+        <input  class="form-control" id="TaskName" required name="TaskName"  [(ngModel)]="taskToEdit.TaskName"
+                #TaskNameControl="ngModel" [ngClass]="{ 'is-invalid': TaskNameControl.touched && TaskNameControl.invalid }">
+        <span class="help-block" *ngIf="TaskNameControl.invalid && (TaskNameControl.dirty || TaskNameControl.touched)">
+          Task Name is required
+        </span>
+      </div>
+    </div> 
+    <div class="form-group row">
+      <label for="ParentTaskName" class="col-sm-2 col-form-label">Parent Task Name</label>
+      <div class="col-sm-4">
+        <!-- <input class="form-control" name="ParentTaskName"  [(ngModel)]="taskToEdit.ParentTaskName"> -->
+        <select id="parent" class="form-control" name="ParentTaskName" [(ngModel)]="taskToEdit.ParentID" >
+            <option value="null" selected>Select Task</option>
+            <option [value]="task.TaskID" *ngFor="let task of taskList">{{ task.TaskName }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="Priority" class="col-sm-2 col-form-label">Priority</label>
+        <div class="col-sm-4">
+          <input type="range" min="0" max="10" class="form-control" name="Priority"  [(ngModel)]="taskToEdit.Priority">
+        </div>
+      </div>
+      <div class="form-group row">
+          <label for="StartDate" class="col-sm-2 col-form-label">Start Date</label>
+          <div class="col-sm-4">            
+            <input type="text" required bsDatepicker class="form-control" #startDateControl="ngModel" autocomplete="off" name="StartDate" [(ngModel)]="taskToEdit.StartDate" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD'}" >
+            <span class="help-block" *ngIf="startDateControl.invalid && (startDateControl.dirty || startDateControl.touched)">
+              Start date is required
+            </span>
+          </div>          
+        </div>       
+        <div class="form-group row">
+            <label for="EndDate" class="col-sm-2 col-form-label">End Date</label>
+            <div class="col-sm-4">
+              <input type="text" required bsDatepicker class="form-control" #EndDateControl="ngModel" autocomplete="off" name="EndDate" [(ngModel)]="taskToEdit.EndDate" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD'}" >
+              <span class="help-block" *ngIf="EndDateControl.invalid && (EndDateControl.dirty || EndDateControl.touched)">
+                End date is required
+               </span>
+            </div>            
+        </div>
+        <div class="form-group row">
+            <label for="User" class="col-sm-2 col-form-label">User</label>
+            <div class="col-sm-4">
+              <select id="User" required class="form-control" name="User" [(ngModel)]="taskToEdit.UserID" >
+                  <option value="null" selected>Select User</option>
+                  <option [value]="task.UserID" *ngFor="let task of usersList">{{ task.FirstName }}</option>
+              </select>
+            </div>
+          </div>
+        <div class="form-group row"> 
+          <div class="col-sm-2">
+            <span></span>
+          </div>           
+            <div class="col-md-1">
+                <button class="btn btn-primary" type="submit" [disabled] ="AddTaskForm.invalid">Create</button>
+            </div>
+            <div class="col-md-1">
+                <a class="btn btn-primary" [routerLink]="['/viewtask']">Cancel</a>
+            </div>
+        </div>
+  </form>
+
+
+ 
+
+  

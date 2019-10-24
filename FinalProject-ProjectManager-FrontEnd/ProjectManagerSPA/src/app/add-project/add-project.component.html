@@ -1,0 +1,138 @@
+<form class="project-form" #AddProjectForm='ngForm' name='form' (ngSubmit) = "onClickSubmit(AddProjectForm)">
+    <div class="form-group row" >
+      <label for="ProjectName" class="col-sm-2 col-form-label">Project Name</label>
+      <div class="col-sm-5">
+        <input  class="form-control" id="ProjectName"    required name="ProjectName"  [(ngModel)]="projectToAdd.ProjectName"
+                #ProjectNameControl="ngModel">               
+      </div>
+    </div> 
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-1">          
+            <input class="form-control" id="chkDate" type="checkbox" (change)="onSetDateChecked($event)" >
+          </div>
+          <div class="col-sm-2">  
+            <input type="text"  [ngClass]="{ 'is-invalid': startDateControl.touched && startDateControl.invalid }" required  bsDatepicker placeholder="Start Date" class="form-control" #startDateControl="ngModel" autocomplete="off" name="StartDate" [(ngModel)]="projectToAdd.StartDate" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD'}" >
+            <div *ngIf="startDateControl.touched && startDateControl.invalid" class="invalid-text">
+              <div *ngIf="startDateControl.errors.required">Start Date is required</div>
+            </div>
+          </div>
+          <div class="col-sm-2">  
+            <input type="text" [ngClass]="{ 'is-invalid': EndDateControl.touched && EndDateControl.invalid }" required bsDatepicker placeholder="End Date"class="form-control" #EndDateControl="ngModel" autocomplete="off" name="EndDate" [(ngModel)]="projectToAdd.EndDate" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD'}" >
+            <div *ngIf="EndDateControl.touched && EndDateControl.invalid" class="invalid-text">
+              <div *ngIf="EndDateControl.errors.required">End Date is required</div>
+            </div>
+       </div>      
+    </div> 
+    <div class="form-group row">
+        <label for="Priority" class="col-sm-2 col-form-label">Priority</label>
+        <div class="col-sm-5">
+          <input type="range" min="0" max="10" class="form-control" name="Priority"  [(ngModel)]="projectToAdd.Priority">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="Manager" class="col-sm-2 col-form-label">Manager</label>
+        <div class="col-sm-5">
+            <select id="User" placeholder="Select Manager" required
+            [ngClass]="{ 'is-invalid': ProjectManagerControl.touched && ProjectManagerControl.invalid }"  #ProjectManagerControl="ngModel" class="form-control"  name="User" [(ngModel)]="projectToAdd.UserID" >
+                <option [value]="manager.UserID" *ngFor="let manager of usersList">{{ manager.FirstName }}</option>
+            </select>
+            <div *ngIf="ProjectManagerControl.touched && ProjectManagerControl.invalid" class="invalid-text">
+              <div *ngIf="ProjectManagerControl.errors.required">Manager is required</div>
+            </div>
+          </div>         
+    </div> 
+  
+      <div class="form-group row"> 
+        <div class="col-sm-2">
+          <span></span>
+        </div >               
+          <div class="col-md-1">
+              <button class="btn btn-primary" type="submit" [disabled] ="AddProjectForm.invalid">
+                  <div *ngIf="projectToAdd.ProjectID == 0; else elseBlock">Create</div>
+                  <ng-template #elseBlock>Update</ng-template>
+              </button>
+          </div>
+          <div class="col-md-1">
+              <a class="btn btn-primary" (click)='Reset(AddProjectForm)'>Reset</a>
+          </div>
+      </div>
+</form>
+  
+  <div class='card'>
+      <div class='card-header' style="font-weight: bold">
+       Project List
+      </div>
+      <div class='card-body'>
+        <fieldset class="the-fieldset" style="align-content: center">
+          <legend class="the-legend">Search Projects</legend>
+          <div class='row p-2'>          
+            <div class='col-md-2'>
+              <input type='text'
+                    [(ngModel)]='projectFilter' />
+            </div>          
+            <div class='col-md-2'>&nbsp;&nbsp;
+                Sort project by:
+            </div>
+            <div class='col-md-2'>
+                <a  (click)='onSort(1)' class="btn btn-info btn-sm">
+                    Start Date
+                  </a>
+            </div>
+            <div class='col-md-2'>
+                <a  (click)='onSort(2)' class="btn btn-info btn-sm">
+                    End Date
+                  </a>
+            </div>
+            <div class='col-md-2'>
+                <a  (click)='onSort(3)' class="btn btn-info btn-sm">
+                    Priority
+                  </a>
+            </div>
+            <div class='col-md-2'>
+                <a  (click)='onSort(4)' class="btn btn-info btn-sm">
+                    Completed
+                  </a>
+            </div>
+          </div>
+        </fieldset>
+        <div class="p-2"></div>      
+        <div class='table-responsive'>
+          <table class='table'
+                *ngIf='projects && projects.length'>
+            <thead>
+              <tr>
+                  <th>Project</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Completed</th>
+                  <th>No of Tasks</th>
+                  <th>Priority</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let project of filterdProject'>    
+                <td>{{ project.ProjectName }}</td> 
+                <td>{{ project.StartDate | date: 'MM/dd/yyyy' }}</td>          
+                <td>{{ project.EndDate | date: 'MM/dd/yyyy' }}</td>   
+                <td>{{ project.IsComplete }}</td> 
+                <td>{{ project.TaskCount }}</td> 
+                <td>{{ project.Priority }}</td>   
+                <td>
+                  <a  (click)='Edit(project)' class="btn btn-primary btn-sm">Update</a>
+                </td>
+                <td>
+                  <a *ngIf='project.IsActive == true' (click)='Suspend(project)' class="btn btn-primary btn-sm">Suspend</a>
+                  </td>               
+              </tr>
+            </tbody>
+          </table>
+        </div>     
+      </div>
+    </div>
+    <div *ngIf='errorMessage'
+         class='alert alert-danger'>
+      Error: {{ errorMessage }}
+  </div>
