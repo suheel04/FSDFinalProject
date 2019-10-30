@@ -1,0 +1,8 @@
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\bin\Release\ProjectManager.Contracts.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\bin\Release\ProjectManager.Contracts.pdb
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\bin\Release\ProjectManager.Entities.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\bin\Release\ProjectManager.Entities.pdb
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\bin\Release\ProjectManager.Entities.dll.config
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\obj\Release\ProjectManager.Contracts.csprojResolveAssemblyReference.cache
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\obj\Release\ProjectManager.Contracts.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.Contracts\obj\Release\ProjectManager.Contracts.pdb

@@ -1,0 +1,6 @@
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.BusinessEntities\bin\Release\ProjectManager.Entities.dll.config
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.BusinessEntities\bin\Release\ProjectManager.Entities.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.BusinessEntities\bin\Release\ProjectManager.Entities.pdb
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.BusinessEntities\obj\Release\ProjectManager.Entities.csprojResolveAssemblyReference.cache
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.BusinessEntities\obj\Release\ProjectManager.Entities.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.BusinessEntities\obj\Release\ProjectManager.Entities.pdb

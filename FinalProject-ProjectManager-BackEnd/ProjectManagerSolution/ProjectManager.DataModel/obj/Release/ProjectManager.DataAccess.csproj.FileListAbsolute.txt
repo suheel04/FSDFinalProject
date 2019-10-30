@@ -1,0 +1,13 @@
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\ProjectManager.DataAccess.dll.config
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\ProjectManager.DataAccess.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\ProjectManager.DataAccess.pdb
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\EntityFramework.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\EntityFramework.SqlServer.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\ProjectManager.Entities.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\ProjectManager.Entities.pdb
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\ProjectManager.Entities.dll.config
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\EntityFramework.xml
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\bin\Release\EntityFramework.SqlServer.xml
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\obj\Release\ProjectManager.DataAccess.csprojResolveAssemblyReference.cache
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\obj\Release\ProjectManager.DataAccess.dll
+C:\Suheel\FinalProject-ProjectManager-BackEnd\ProjectManagerSolution\ProjectManager.DataModel\obj\Release\ProjectManager.DataAccess.pdb
