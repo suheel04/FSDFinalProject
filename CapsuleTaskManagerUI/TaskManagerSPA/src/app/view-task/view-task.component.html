@@ -1,0 +1,92 @@
+<div class='card'>
+  <div class='card-header' style="font-weight: bold">
+   Task List
+  </div>
+  <div class='card-body'>
+    <fieldset class="the-fieldset" style="align-content: center">
+      <legend class="the-legend">Search Tasks</legend>
+      <div class='row p-2'>
+        <div class='col-md-2'>Task:</div>
+        <div class='col-md-4'>
+          <input type='text'
+                [(ngModel)]='taskFilter' />
+        </div>
+        <div class='col-md-2'>Parent Task:</div>
+        <div class='col-md-4'>
+          <input type='text'
+                [(ngModel)]='ParentTaskFilter' />
+        </div>
+      </div>
+      <div class='row p-2'>
+          <div class='col-md-2'>Priority From:</div>
+          <div class='col-md-4'>
+            <input type='text'
+                  [(ngModel)]='PriorityFromFilter' />
+          </div>
+          <div class='col-md-2'>Priority To:</div>
+          <div class='col-md-4'>
+            <input type='text'
+                  [(ngModel)]='PriorityToFilter' />
+          </div>
+        </div>
+
+        <div class='row p-2'>
+            <div class='col-md-2'>Start Date:</div>
+            <div class='col-md-4'>
+              <input type='date'
+                    [(ngModel)]='StartDateFilter' />
+            </div>
+            <div class='col-md-2'>End Date:</div>
+            <div class='col-md-4'>
+              <input type='date'
+                    [(ngModel)]='EndDateFilter' />
+            </div>
+          </div>
+    </fieldset>
+    <div class="p-2"></div>      
+    <div class='table-responsive'>
+      <table class='table'
+            *ngIf='tasks && tasks.length'>
+        <thead>
+          <tr>
+              <th>Task</th>
+              <th>Parent</th>
+              <th>Priority</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let task of filteredTasks'>    
+            <td>{{ task.TaskName }}</td> 
+            <td>{{ task.ParentTaskName }}</td>          
+            <td>{{ task.Priority }}</td>          
+            <td>{{ task.StartDate | date: 'MM/dd/yyyy' }}</td>          
+            <td>{{ task.EndDate | date: 'MM/dd/yyyy' }}</td> 
+            <td>
+              <a  (click)='Delete(task)' class="btn btn-primary btn-sm">Delete Task
+                </a>
+            </td>
+            <td> 
+              <a *ngIf='task.IsCompleted == false' [routerLink]="['/updatetask', task.TaskID]" style="color:black" class="btn btn-primary btn-sm">
+              Edit Task
+              </a>
+            </td>
+            <td>
+              <a *ngIf='task.IsCompleted == false' (click)='EndTask(task)' class="btn btn-primary btn-sm">
+                  End Task
+                </a>
+              </td>               
+          </tr>
+        </tbody>
+      </table>
+    </div>     
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
